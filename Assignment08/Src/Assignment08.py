@@ -1,9 +1,20 @@
 '''
+Jake Bush
+bush2jr@mail.uc.edu
+Assignment 8
+IS 4010
+Spring 2020
+Project shows abilitly to modify a PyDev project in Eclipse to process an existing spreadsheet
+@author :Bush2jr
+'''
+
+'''
 Created on Mar 20, 2020
 Assignment 08 Donor Code
 Adapted from https://openpyxl.readthedocs.io/en/stable/charts/pie.html
 @author: nicomp
 '''
+
 from openpyxl import load_workbook
 from openpyxl.chart import (
     PieChart,
@@ -17,8 +28,8 @@ wb = load_workbook(filename = 'Top5TransactionsByLoyaltyNumber.xlsx')
 ws = wb['Sheet1']
 
 pie = PieChart()
-labels = Reference(ws, min_col=6, min_row=2, max_row=6)
-data = Reference(ws, min_col=2, min_row=1, max_row=6)
+labels = Reference(ws, min_col=4, min_row=2, max_row=6)
+data = Reference(ws, min_col=2, min_row=2, max_row=6)
 pie.add_data(data, titles_from_data=False)
 pie.set_categories(labels)
 pie.title = "Top 5 Total Transactions by Loyalty Number"
